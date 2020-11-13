@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>http://2ndprince.github.io/2020/11/05/spring-initializr/</loc>
+    
+    <lastmod>2020-11-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://2ndprince.github.io/tags/index.html</loc>
     
     <lastmod>2020-11-13</lastmod>
@@ -31,13 +38,6 @@
   
   <url>
     <loc>http://2ndprince.github.io/about/index.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://2ndprince.github.io/2020/11/05/spring-initializr/</loc>
     
     <lastmod>2020-11-13</lastmod>
     
@@ -67,13 +67,6 @@
 
   
   <url>
-    <loc>http://2ndprince.github.io/tags/notification/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://2ndprince.github.io/tags/Hexo/</loc>
     <lastmod>2020-11-13</lastmod>
     <changefreq>daily</changefreq>
@@ -87,10 +80,38 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://2ndprince.github.io/tags/Notification/</loc>
+    <lastmod>2020-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/tags/Slack/</loc>
+    <lastmod>2020-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/tags/Spring/</loc>
+    <lastmod>2020-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
     <loc>http://2ndprince.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
+    <lastmod>2020-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/categories/Starter/</loc>
     <lastmod>2020-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
