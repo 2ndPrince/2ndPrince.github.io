@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://2ndPrince.github.io/2020/04/17/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2020-11-13</lastmod>
-  </url>
-  <url>
-    <loc>http://2ndPrince.github.io/2020/11/12/Create-Endpoint-using-RestController/</loc>
-    <lastmod>2020-11-13</lastmod>
-  </url>
-  <url>
     <loc>http://2ndPrince.github.io/2020/11/05/Spring-Initializr/</loc>
     <lastmod>2020-11-13</lastmod>
   </url>
   <url>
     <loc>http://2ndPrince.github.io/2020/11/08/Slack-Notification/</loc>
+    <lastmod>2020-11-13</lastmod>
+  </url>
+  <url>
+    <loc>http://2ndPrince.github.io/2020/04/17/Hexo-Theme-LiveMyLife/</loc>
+    <lastmod>2020-11-13</lastmod>
+  </url>
+  <url>
+    <loc>http://2ndPrince.github.io/2020/11/12/Create-Endpoint-using-RestController/</loc>
     <lastmod>2020-11-13</lastmod>
   </url>
 </urlset> 
