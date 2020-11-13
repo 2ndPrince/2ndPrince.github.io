@@ -73,14 +73,14 @@ toggleBtn.addEventListener("click", function() {
   document.cookie = "sb-color-mode" + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
 
   if (e) {
-    darkMode();
-    loadHighlightNormalLink();
-    darkBackgroundImage();
-    darkRocket();
-  } else {
     brightMode();
     deleteHighlightNormalLink();
     deleteDarkBackgroundImage();
     lightRocket();
+  } else {
+    darkMode();
+    loadHighlightNormalLink();
+    darkBackgroundImage();
+    darkRocket();
   }
 });
