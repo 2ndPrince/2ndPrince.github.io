@@ -67,7 +67,7 @@ if (getCookieValue('sb-color-mode') === 'dark') {
 var toggleBtn = document.querySelector(".toggle");
 toggleBtn.addEventListener("click", function() {
   var e = document.body.classList.contains("body--dark");
-  var cookieString = e ? "light" : "dark";
+  var cookieString = e ? "dark" : "light";
   var exp = new Date();
   exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
   document.cookie = "sb-color-mode" + "=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
