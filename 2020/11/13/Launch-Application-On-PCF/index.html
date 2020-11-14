@@ -394,29 +394,35 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="Launch-an-Application-on-PCF"><a href="#Launch-an-Application-on-PCF" class="headerlink" title="Launch an Application on PCF"></a>Launch an Application on PCF</h1><h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><p>Your localhost application can’t be easily accessed by other people.<br>Your computer is not a server computer that provides stable responses through large number of requests. Your personal computer has a security issue when it’s used as a web server. Server monitoring would be also of a burden. </p>
+        <h1 id="Launch-an-Application-on-PCF"><a href="#Launch-an-Application-on-PCF" class="headerlink" title="Launch an Application on PCF"></a>Launch an Application on PCF</h1><h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><p>Your localhost application can’t be easily accessed by other people.<br>Your computer is not a server computer that provides stable responses through large number of requests. Your personal computer has a security issue when it’s used as a web server. Server monitoring would be also of a burden.</p>
 <p>Companies use cloud services to host their applications on the web. In this article, we are going to explore Pivotal Cloud Foundary(PCF) to host our localhost application. Additional features such as logging, monitoring, alerting and security can be easily integrated inside this cloud platform as plugins.</p>
 <hr>
 <h1 id="2-Create-your-application’s-JAR-file"><a href="#2-Create-your-application’s-JAR-file" class="headerlink" title="2. Create your application’s JAR file"></a>2. Create your application’s JAR file</h1><p>Execute <code>bootJar</code> option in Gradle. Check the JAR generated in <code>build/libs</code> path</p>
 <h1 id="3-Create-an-manifest-file"><a href="#3-Create-an-manifest-file" class="headerlink" title="3. Create an manifest file"></a>3. Create an manifest file</h1><p>What is a manifest? It’s a text file that contains deploy information about the JAR file.<br>After you push your JAR file on the cloud, the manifest file guides the platform how to use.<br>For example, the manifest file tells the cloud system to allocate 1GB of memory with ABC logging service and BCD authentication service.</p>
-<p><img src="manifest.png" alt="Manifest"></p>
+<p><img src="Launch-Application-On-PCF/manifest.png" alt="Manifest"></p>
 <h1 id="4-Login-to-PCF"><a href="#4-Login-to-PCF" class="headerlink" title="4. Login to PCF"></a>4. Login to PCF</h1><p>Open terminal and enter the following <code>cf login -a api.run.pivotal.io</code><br>You will be prompted to provide more login information</p>
-<p><img src="pcf-login.png" alt="PCF Login"></p>
-<h1 id="5-Push-your-app-into-PCF"><a href="#5-Push-your-app-into-PCF" class="headerlink" title="5. Push your app into PCF"></a>5. Push your app into PCF</h1><p>Two things you need; JAR and manifest<br>Use the following command to push.<br><code>cf push -f {pathToManifest}/manifest.yml</code> </p>
-<p><img src="pcf-push.png" alt="PCF Push"><br>The state of <code>running</code> confirms the app has been pushed and running.</p>
+<p><img src="Launch-Application-On-PCF/pcf-login.png" alt="PCF Login"></p>
+<h1 id="5-Push-your-app-into-PCF"><a href="#5-Push-your-app-into-PCF" class="headerlink" title="5. Push your app into PCF"></a>5. Push your app into PCF</h1><p>Two things you need; JAR and manifest<br>Use the following command to push.</p>
+<p><code>cf push -f {pathToManifest}/manifest.yml</code></p>
+<p><img src="Launch-Application-On-PCF/pcf-push.png" alt="PCF Push"></p>
+<p>The state of <code>running</code> confirms the app has been pushed and running.</p>
 <h1 id="6-Check-PCF-console"><a href="#6-Check-PCF-console" class="headerlink" title="6. Check PCF console"></a>6. Check PCF console</h1><p>You can also check the PCF console or dashboard to check the status of your applications.<br>To view, visit the console website.<br><code>https://console.run.pivotal.io/</code></p>
-<p><img src="pcf-console.png" alt="PCF Console"></p>
+<p><img src="Launch-Application-On-PCF/pcf-console.png" alt="PCF Console"></p>
 <h1 id="7-Make-a-test-call-on-the-pushed-app-from-the-cloud"><a href="#7-Make-a-test-call-on-the-pushed-app-from-the-cloud" class="headerlink" title="7. Make a test call on the pushed app from the cloud"></a>7. Make a test call on the pushed app from the cloud</h1><p>Use the Route that’s assigned to the app. Use the demo endpoint that’s created in the previous post.<br>It is <code>https://routing-optimizer.cfapps.io/demo/message</code><br>You see the message <code>hi</code></p>
 <hr>
 <h1 id="Troubleshoot"><a href="#Troubleshoot" class="headerlink" title="Troubleshoot"></a>Troubleshoot</h1><ol>
-<li>You get some free credits to explore PCF platform. Don’t spend money.</li>
-<li>Make sure the jar path on the manifest file.</li>
+<li>You get some free credits to explore PCF platform. Don’t spend money</li>
+<li>Make sure the jar path on the manifest file</li>
 </ol>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2020/11/14/Link-Cloud-Database-With-PCF/" data-toggle="tooltip" data-placement="top" title="Link-Cloud-Database-With-PCF">&larr; Previous Post</a>
+          </li>
           
           
           <li class="next">
