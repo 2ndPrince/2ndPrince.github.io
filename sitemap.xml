@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>http://2ndprince.github.io/categories/index.html</loc>
+    <loc>http://2ndprince.github.io/archive/index.html</loc>
     
     <lastmod>2020-11-13</lastmod>
     
   </url>
   
   <url>
-    <loc>http://2ndprince.github.io/archive/index.html</loc>
+    <loc>http://2ndprince.github.io/categories/index.html</loc>
     
     <lastmod>2020-11-13</lastmod>
     
@@ -81,14 +81,14 @@
 
   
   <url>
-    <loc>http://2ndprince.github.io/tags/Hexo/</loc>
+    <loc>http://2ndprince.github.io/tags/PCF/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://2ndprince.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://2ndprince.github.io/tags/Spring/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -109,14 +109,14 @@
   </url>
   
   <url>
-    <loc>http://2ndprince.github.io/tags/Spring/</loc>
+    <loc>http://2ndprince.github.io/tags/Hexo/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://2ndprince.github.io/tags/PCF/</loc>
+    <loc>http://2ndprince.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -125,7 +125,7 @@
 
   
   <url>
-    <loc>http://2ndprince.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
+    <loc>http://2ndprince.github.io/categories/From-Previous-Blog-General/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -139,7 +139,7 @@
   </url>
   
   <url>
-    <loc>http://2ndprince.github.io/categories/From-Previous-Blog-General/</loc>
+    <loc>http://2ndprince.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
     <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
