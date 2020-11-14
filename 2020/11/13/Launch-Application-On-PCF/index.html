@@ -334,7 +334,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">333</span> In Total
+              Words <span class="post-count">338</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -395,7 +395,7 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <h1 id="Launch-an-Application-on-PCF"><a href="#Launch-an-Application-on-PCF" class="headerlink" title="Launch an Application on PCF"></a>Launch an Application on PCF</h1><h2 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h2><p>Your localhost application can’t be easily accessed by other people.<br>Your computer is not a server computer that provides stable responses through large number of requests. Your personal computer has a security issue when it’s used as a web server. Server monitoring would be also of a burden. </p>
-<p>Companies use cloud services to host their applications on the web. In this article, let’s use<br>Pivotal Cloud Foundary(PCF) to host our localhost application. Additional features such as logging, monitoring, alerting and security can be easily integrated inside this cloud platform.</p>
+<p>Companies use cloud services to host their applications on the web. In this article, we are going to explore Pivotal Cloud Foundary(PCF) to host our localhost application. Additional features such as logging, monitoring, alerting and security can be easily integrated inside this cloud platform as plugins.</p>
 <hr>
 <h2 id="2-Create-your-application’s-JAR-file"><a href="#2-Create-your-application’s-JAR-file" class="headerlink" title="2. Create your application’s JAR file"></a>2. Create your application’s JAR file</h2><p>Execute <code>bootJar</code> option in Gradle. Check the JAR generated in <code>build/libs</code> path</p>
 <h2 id="3-Create-an-manifest-file"><a href="#3-Create-an-manifest-file" class="headerlink" title="3. Create an manifest file"></a>3. Create an manifest file</h2><p>What is a manifest? It’s a text file that contains deploy information about the JAR file.<br>After you push your JAR file on the cloud, the manifest file guides the platform how to use.<br>For example, the manifest file tells the cloud system to allocate 1GB of memory with ABC logging service and BCD authentication service.</p>
