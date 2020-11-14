@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://2ndprince.github.io/2020/11/13/Launch-Application-On-PCF/</loc>
+    
+    <lastmod>2020-11-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://2ndprince.github.io/2020/11/12/Create-Endpoint-using-RestController/</loc>
     
     <lastmod>2020-11-13</lastmod>
@@ -67,7 +74,7 @@
 
   <url>
     <loc>http://2ndprince.github.io/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,35 +82,42 @@
   
   <url>
     <loc>http://2ndprince.github.io/tags/Hexo/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://2ndprince.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://2ndprince.github.io/tags/Notification/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://2ndprince.github.io/tags/Slack/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://2ndprince.github.io/tags/Spring/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/tags/PCF/</loc>
+    <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -112,21 +126,21 @@
   
   <url>
     <loc>http://2ndprince.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://2ndprince.github.io/categories/DevOps/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://2ndprince.github.io/categories/From-Previous-Blog-General/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
