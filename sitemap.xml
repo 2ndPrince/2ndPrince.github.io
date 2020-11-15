@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://2ndprince.github.io/2020/11/15/Gradle-Task-with-Custom-Annotation/</loc>
+    
+    <lastmod>2020-11-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/2020/11/15/Gradle-Simple-Task/</loc>
+    
+    <lastmod>2020-11-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/2020/11/15/Setup-Proxy-Programatically/</loc>
+    
+    <lastmod>2020-11-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/2020/11/15/Setup-Proxy-with-JVM/</loc>
+    
+    <lastmod>2020-11-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/2020/11/15/Revert-Commit/</loc>
+    
+    <lastmod>2020-11-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://2ndprince.github.io/2020/11/14/Link-Jenkins-With-Github/</loc>
     
     <lastmod>2020-11-15</lastmod>
@@ -208,6 +243,20 @@
   
   <url>
     <loc>http://2ndprince.github.io/tags/Asana/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/tags/Proxy/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://2ndprince.github.io/tags/Gradle/</loc>
     <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
