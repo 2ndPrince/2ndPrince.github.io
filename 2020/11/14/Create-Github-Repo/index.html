@@ -237,6 +237,13 @@
           
 
           
+          <li>
+            <a href="/template.html">Install-Jenkins-Practice-CI</a>
+          </li>
+          
+          
+
+          
           <li><a class="popup-trigger" title="Search"><span class="search-icon"></span>Search</a></li>
           
         </ul>
@@ -330,11 +337,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">2</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">314</span> In Total
+              Words <span class="post-count">322</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -394,27 +401,32 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="Create-Github-Repository"><a href="#Create-Github-Repository" class="headerlink" title="Create Github Repository"></a>Create Github Repository</h1><h2 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h2><p>Before VCS(Version Control Software), people named files like filename_v1 and filename_v2. With VCS, you could track all history and easily work<br>with other people. In this post, we are going to create a private Github repository.</p>
+        <h1 id="Create-Github-Repository"><a href="#Create-Github-Repository" class="headerlink" title="Create Github Repository"></a>Create Github Repository</h1><h2 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h2><p>Before VCS(Version Control Software), people named files like filename_v1 and filename_v2.<br>With VCS, you could track all history and easily work<br>with other people. In this post, we are going to create a private Github repository.</p>
 <hr>
 <h2 id="2-Create-a-private-Repository"><a href="#2-Create-a-private-Repository" class="headerlink" title="2. Create a private Repository"></a>2. Create a private Repository</h2><p>There are two types of repositories in github; public and private.<br>If you choose private and would like to invite other people, you might end up creating a github team account or enterprise that are not free.<br>We are working alone for this tutorial, and private is okay for us.</p>
 <p><img src="1-private.png" alt="Github-Private-Repo"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git config --global user.email &quot;git이메일주소&quot;</span><br><span class="line">git config --global user.name &quot;git이름(별명)&quot;</span><br><span class="line">git remote add origin &quot;깃주소&quot;</span><br><span class="line">(git remote set-url origin new_url) to edit</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;Initial commmit&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
 <p><img src="2-push-origin-master.png" alt="Need-To-Create-SSH"></p>
-<p>Looking at the message, I was not permitted. Need to verify my credentials through password or SSH key.</p>
+<p>Looking at the message, I was not permitted.<br>Need to verify my credentials through password or SSH key.</p>
 <h2 id="3-Setup-SSH-Key"><a href="#3-Setup-SSH-Key" class="headerlink" title="3. Setup SSH Key"></a>3. Setup SSH Key</h2><p>You could verify yourself with password, but you don’t want to repeat yourself every time for a push.<br>You can save your password somewhere, but it can be exposed to others.<br>A better verification method is using SSH key.<br>This key is generated in your local machine and link it to your github account.<br>You don’t save your password anywhere but this key only in your machine.<br>For different devices, you might end up creating new SSH keys, but not a big deal.</p>
-<p>Follow up with the guides on setting up SSH Key. <a href="developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys">Link</a></p>
-<h2 id="4-Push-your-code"><a href="#4-Push-your-code" class="headerlink" title="4. Push your code"></a>4. Push your code</h2><p>Try the push command once again.</p>
+<p>Follow up with <a href="developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys">the guides</a> on setting up SSH Key.</p>
+<h2 id="4-Push-your-code"><a href="#4-Push-your-code" class="headerlink" title="4. Push your code"></a>4. Push your code</h2><p>Try the push command once again.<br>Your two commits have been pushed 4 minutes ago.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
 <p><img src="3-push-available.png" alt="Pushed"></p>
 <hr>
-<h2 id="5-Troubleshoot"><a href="#5-Troubleshoot" class="headerlink" title="5. Troubleshoot"></a>5. Troubleshoot</h2><p>When trying to push, if you get rejected for having the current branch’s version lower than the previous one,<br>and if you are sure that your branch is the latest one, you have an option to rebase.</p>
+<h2 id="5-Troubleshoot"><a href="#5-Troubleshoot" class="headerlink" title="5. Troubleshoot"></a>5. Troubleshoot</h2><p>When trying to push, if you get rejected for having the current branch’s version lower than the previous one, and if you are sure that your branch is the latest one, you have an option to rebase.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
+
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2020/11/14/Communicate-Between-Apps-Using-RestTemplate/" data-toggle="tooltip" data-placement="top" title="Communicate-Between-Apps-Using-RestTemplate">&larr; Previous Post</a>
+          </li>
           
           
           <li class="next">

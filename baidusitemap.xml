@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://2ndPrince.github.io/2020/11/14/Install-Jenkins-Practice-CI/</loc>
+    <lastmod>2020-11-15</lastmod>
+  </url>
+  <url>
+    <loc>http://2ndPrince.github.io/template.html</loc>
+    <lastmod>2020-11-15</lastmod>
+  </url>
+  <url>
+    <loc>http://2ndPrince.github.io/2020/11/14/Communicate-Between-Apps-Using-RestTemplate/</loc>
+    <lastmod>2020-11-15</lastmod>
+  </url>
+  <url>
     <loc>http://2ndPrince.github.io/2020/11/14/Create-Github-Repo/</loc>
     <lastmod>2020-11-15</lastmod>
   </url>
