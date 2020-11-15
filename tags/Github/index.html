@@ -71,12 +71,12 @@
 
   <!-- Pygments Highlight CSS -->
   
-<link rel="stylesheet" href="../../../../css/highlight.css">
-<link rel="stylesheet" href="../../../../css/widget.css">
-<link rel="stylesheet" href="../../../../css/rocket.css">
-<link rel="stylesheet" href="../../../../css/signature.css">
-<link rel="stylesheet" href="../../../../css/catalog.css">
-<link rel="stylesheet" href="../../../../css/livemylife.css">
+<link rel="stylesheet" href="../../css/highlight.css">
+<link rel="stylesheet" href="../../css/widget.css">
+<link rel="stylesheet" href="../../css/rocket.css">
+<link rel="stylesheet" href="../../css/signature.css">
+<link rel="stylesheet" href="../../css/catalog.css">
+<link rel="stylesheet" href="../../css/livemylife.css">
 
 
   
@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://2ndPrince.github.io/2020/11/14/Link-Cloud-Database-With-PCF/">
+  <link rel="canonical" href="http://2ndPrince.github.io/tags/Github/">
   <title>
     
-    Link-Cloud-Database-With-PCF - 2ndPrince Blog
+    2ndPrince Blog
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -289,8 +289,8 @@
 
   <style type="text/css">
     header.intro-header {
-       /*post*/
-        background-image: url('');
+       /*page*/
+        background-image: url('/img/header_img/archive_bg2.jpg');
       
     }
 
@@ -312,40 +312,10 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="post-heading">
-            <div class="tags">
-              
-              <a class="tag" href="/tags/#PCF" title="PCF">PCF</a>
-              
-            </div>
-            <h1>Link-Cloud-Database-With-PCF</h1>
-            <h2 class="subheading"></h2>
-            <span class="meta">
-              Posted by 2ndPrince on
-              2020-11-14
-            </span>
-
-
-            
-            <!-- WordCount start -->
-            <div class="blank_box"></div>
-            <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
-            </span>
-            <div class="blank_box"></div>
-            <span class="meta">
-              Words <span class="post-count">441</span> In Total
-            </span>
-            <div class="blank_box"></div>
-            <!-- 不蒜子统计 start -->
-            <span class="meta">
-              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
-            </span>
-            <!-- 不蒜子统计 end -->
-            <!-- WordCount end -->
-            
-
-
+          <div class="site-heading">
+            <h1>2ndPrince Blog</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">Simply Java Spring Developer</span>
           </div>
           
         </div>
@@ -386,294 +356,359 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-	<!-- Modify by Yu-Hsuan Yen -->
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+	<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    
 
-        <h1 id="Link-Cloud-Database-with-PCF-applications"><a href="#Link-Cloud-Database-with-PCF-applications" class="headerlink" title="Link Cloud Database with PCF applications"></a>Link Cloud Database with PCF applications</h1><h2 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h2><p>Every application needs database. With our PCF cloud applications, we would need cloud database as well.<br>In this post, we are going to use <code>ClearDB MySQL database</code>, conveniently configured by PCF, link it with our application and finally test in order to confirm working.</p>
-<hr>
-<h2 id="2-Create-a-database-in-PCF"><a href="#2-Create-a-database-in-PCF" class="headerlink" title="2. Create a database in PCF"></a>2. Create a database in PCF</h2><p>Among the list of services in PCF dashboard, choose this service.</p>
-<p><img src="db-instance.png" alt="DB Service"></p>
-<h2 id="3-Member-credentials"><a href="#3-Member-credentials" class="headerlink" title="3. Member credentials"></a>3. Member credentials</h2><p>Look into the database service created. Find the three information ready.</p>
-<p>Hostname, Username and Password</p>
-<h2 id="4-Create-database-schema"><a href="#4-Create-database-schema" class="headerlink" title="4. Create database schema"></a>4. Create database schema</h2><p>With the help of UI from <code>DataGrip</code>, you can easily write SQL script(DDL) to create and modify table structure.</p>
-<p>Create Table<br><img src="new-table-datagrip.png" alt="DB Table Creation"></p>
-<p>View Table with data<br><img src="db-table-with-data.png" alt="DB Table Creation"></p>
-<p>View SQL Queries<br><img src="db-queries-generated.png" alt="DB Query"></p>
-<h2 id="5-Get-a-database-value-through-demo-application"><a href="#5-Get-a-database-value-through-demo-application" class="headerlink" title="5. Get a database value through demo application"></a>5. Get a database value through demo application</h2><p>Let’s think about how to do it before jumping into the implementation.</p>
-<ul>
-<li>First, the application should know database connection info.</li>
-<li>Second, the application should know the table and column names.</li>
-<li>Third, the application should have a model class to contain the database read values.</li>
-<li>Fourth, the application should have an endpoint to make a call to the database and return the result to us.</li>
-</ul>
-<p>Let’s create the model class called <code>Employee</code> that contains id and name.<br><img src="employee-pojo.png" alt="Employee model class"></p>
-<p>Let’s create a repository that makes call from application to database. </p>
-<p>Use spring data jpa and it will work with other database types(Oracle, MySql… etc).</p>
-<p><img src="employee-repo.png" alt="Employee Repository"></p>
-<p>Let’s create a rest controller endpoint for us to test the connection.<br><img src="employee-endpoint.png" alt="Employee Controller"></p>
-<h2 id="6-Test-the-connection-from-local-machine"><a href="#6-Test-the-connection-from-local-machine" class="headerlink" title="6. Test the connection from local machine"></a>6. Test the connection from local machine</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url&#x3D;jdbc:mysql:&#x2F;&#x2F;us-cdbr-east-02.cleardb.com:3306&#x2F;ad_c91762cf7ca78d6</span><br><span class="line">spring.datasource.username&#x3D;</span><br><span class="line">spring.datasource.password&#x3D;</span><br></pre></td></tr></table></figure>
+    <!-- USE SIDEBAR -->
+    <!-- Post Container -->
+    <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
 
-<p>Test form Postman<br><img src="test-postman.png" alt="Postman Test"></p>
-<h2 id="7-Test-the-connection-from-PCF"><a href="#7-Test-the-connection-from-PCF" class="headerlink" title="7. Test the connection from PCF"></a>7. Test the connection from PCF</h2><p>Since we’ve just created the <code>getAllEmployees</code> endpoint, we need to push our application to the PCF in order to reflect the change.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cf login -a api.run.pivotal.io</span><br><span class="line">cf push -f pathToManifest&#x2F;manifest.yml</span><br></pre></td></tr></table></figure>
+      
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
-<p>Test from PCF<br><img src="cloud-test.png" alt="PCF Test"></p>
-<hr>
-<h2 id="8-Troubleshoot"><a href="#8-Troubleshoot" class="headerlink" title="8. Troubleshoot"></a>8. Troubleshoot</h2><ol>
-<li><p>DDL should be carefully designed beforehand, or you will end up changing multiple times</p>
-</li>
-<li><p>I’ve bound the database service to the application in PCF. However, I still provide the database connection info. There must be a room to improve</p>
-</li>
-<li><p>Curious to know generated queries? Set <code>logging.level.root=debug</code> in application.properties. Call the endpoint and find the queries in Intellij console. You will see <code>hql, hibernate, jpatransactionmanager</code> and <code>JpaTransactionManager, EntityManagerFactory, PoolBase</code>. Database connection details are taken care by <code>com.mysql.cj.jdbc.ConnectionImpl</code>.</p>
-</li>
-<li><p>The max user is four in our database. If the following error occurs, connect to the cleardb and clear existing connections.</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.sql.SQLSyntaxErrorException: User &#39;XXXXX has exceeded the &#39;max_user_connections&#39; resource (current value: 4)</span><br></pre></td></tr></table></figure>
+      
 
+      <!-- 归档列表 -->
 
-        <hr>
-        <!-- Pager -->
-        <ul class="pager">
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
+          <span class="tag-text">2020</span>
+        </span>
+        <ul>
           
-          <li class="previous">
-            <a href="/2020/11/14/Create-Github-Repo/" data-toggle="tooltip" data-placement="top" title="Create-Github-Repo">&larr; Previous Post</a>
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            11-14
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/11/14/Create-Github-Repo/" style="color: #0085a1">
+              <span>
+                Create-Github-Repo
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
           </li>
           
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            11-14
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/11/14/Link-Cloud-Database-With-PCF/" style="color: #0085a1">
+              <span>
+                Link-Cloud-Database-With-PCF
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
           
-          <li class="next">
-            <a href="/2020/11/13/Launch-Application-On-PCF/" data-toggle="tooltip" data-placement="top" title="Launch-Application-On-PCF">Next Post &rarr;</a>
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            11-13
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/11/13/Launch-Application-On-PCF/" style="color: #0085a1">
+              <span>
+                Launch-Application-On-PCF
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            11-12
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/11/12/Create-Endpoint-using-RestController/" style="color: #0085a1">
+              <span>
+                Create-Endpoint-using-RestController
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            11-08
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/11/08/Slack-Notification/" style="color: #0085a1">
+              <span>
+                Slack-Notification
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            11-05
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/11/05/Spring-Initializr/" style="color: #0085a1">
+              <span>
+                Spring-Initializr
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            04-17
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/17/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
+              <span>
+                Hexo-Theme-LiveMyLife
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
           </li>
           
         </ul>
+      </div>
+      
 
-        
-        <!-- tip start -->
-        <div class="tip">
-          <p>
-            If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
-          </p>
-        </div>
-        <!-- tip end -->
-        
 
-        
-        <!-- Sharing Srtart -->
-        <!-- Social Social Share Post -->
-<!-- Docs:https://github.com/overtrue/share.js -->
+    </div>
+  </div>
+</div>
 
-<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
-  <ul class="list-inline text-center social-share-ul">
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-twitter">
-        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a class="social-share-icon icon-wechat">
-        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-weibo">
-        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-qq">
-        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Link-Cloud-Database-With-PCF&body=Hi,I found this website and thought you might like it http://2ndPrince.github.io/2020/11/14/Link-Cloud-Database-With-PCF/">
-        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
+
+      <!-- 如果开启评论功能 -->
+      
+    </div>
+
+    <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        
+<!-- <h5>VISITORS</h5> -->
+<h5><a href="/">VISITORS</a></h5>
+<div class="widget">
+  <span>
+    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
+  </span>
+  <br />
+  <span>
+    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
+  </span>
+</div>
+
+
+        <hr>
+    
+        <!-- Featured Tags -->
+
+<section>
+  <!-- no hr -->
+  <h5><a href="/tags/">FEATURED TAGS</a></h5>
+  <div class="tags">
+    
+    
+    <a href="/tags/#PCF" title="PCF" rel="2">PCF</a>
+    
+    
+    
+    <a href="/tags/#Spring" title="Spring" rel="1">Spring</a>
+    
+    
+    
+    <a href="/tags/#Notification" title="Notification" rel="1">Notification</a>
+    
+    
+    
+    <a href="/tags/#Slack" title="Slack" rel="1">Slack</a>
+    
+    
+    
+    <a href="/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
+    
+    
+    
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
+    
+    
+    
+    <a href="/tags/#Github" title="Github" rel="1">Github</a>
+    
+    
+  </div>
+</section>
+
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+  <h5><a href="/about/">ABOUT ME</a></h5>
+  <div class="short-about">
+
+    
+    <img id="avatar_pic" src="/img/avatar/youngseok.jpeg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
+    
+
+    
+    <p>Welcome to my blog</p>
+    
+
+    <!-- SNS Link -->
+    <ul class="list-inline">
+      
+
+      
+      <li>
+        <a target="_blank" href="https://github.com/2ndPrince">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+    </ul>
+  </div>
+</section>
+
+        <hr>
+    
+        
+<!-- <h5>RECENT POSTS</h5> -->
+<h5><a href="/">RECENT POSTS</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="../../2020/11/14/Create-Github-Repo/">
+      <li>Create-Github-Repo</li>
+    </a>
+    
+    <a href="../../2020/11/14/Link-Cloud-Database-With-PCF/">
+      <li>Link-Cloud-Database-With-PCF</li>
+    </a>
+    
+    <a href="../../2020/11/13/Launch-Application-On-PCF/">
+      <li>Launch-Application-On-PCF</li>
+    </a>
+    
+    <a href="../../2020/11/12/Create-Endpoint-using-RestController/">
+      <li>Create-Endpoint-using-RestController</li>
+    </a>
+    
+    <a href="../../2020/11/08/Slack-Notification/">
+      <li>Slack-Notification</li>
+    </a>
+    
   </ul>
 </div>
 
-<!-- css & js -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
-<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-        <!-- Sharing End -->
-        
         <hr>
-
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
-
-<!-- gitalk start -->
-<!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
-
-<div id="gitalk-container"></div>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
-<script src="/js/comment/gitalk.js"></script>
-
-<script>
-  var gitalk = new Gitalk({
-    clientID: '',
-    clientSecret: '',
-    repo: '',
-    owner: '',
-    admin: '',
-    id: 'Sat Nov 14 2020 13:47:57 GMT-0500', // Ensure uniqueness and length less than 50
-    distractionFreeMode: false, // Facebook-like distraction free mode
-    perPage: 10 ,
-    pagerDirection: 'last',
-    createIssueManually: false ,
-    language: 'en'
-  });
-  gitalk.render('gitalk-container');
-
-  var gtFolded = () => {
-    setTimeout(function() {
-      let markdownBody = document.getElementsByClassName("markdown-body");
-      let list = Array.from(markdownBody);
-      list.forEach(item => {
-        if (item.clientHeight > 250) {
-          item.classList.add('gt-comment-body-folded');
-          item.style.maxHeight = '250px';
-          item.title = 'Click to Expand';
-          item.onclick = function() {
-            item.classList.remove('gt-comment-body-folded');
-            item.style.maxHeight = '';
-            item.title = '';
-            item.onclick = null;
-          };
-        }
-      })
-    }, 800);
-  }
-</script>
-
-<!-- gitalk end -->
-
-
-
-<!-- 2. gitment comment -->
-
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
-        <hr>
-
-      </div>
-
-      <!-- Catalog: Tabe of Content -->
-      <!-- Table of Contents -->
-
     
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
-        
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Link-Cloud-Database-with-PCF-applications"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Link Cloud Database with PCF applications</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-Overview"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. Overview</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-Create-a-database-in-PCF"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. Create a database in PCF</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-Member-credentials"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. Member credentials</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-Create-database-schema"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. Create database schema</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-Get-a-database-value-through-demo-application"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. Get a database value through demo application</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-Test-the-connection-from-local-machine"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">6. Test the connection from local machine</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#7-Test-the-connection-from-PCF"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">7. Test the connection from PCF</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-Troubleshoot"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">8. Troubleshoot</span></a></li></ol></li></ol>
-        
-        </div>
-      </aside>
-    
-
-
-      <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-        <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">FEATURED TAGS</a>
-          </h5>
-          <div class="tags">
-            
-            <a class="tag" href="/tags/#PCF" title="PCF">PCF</a>
-            
-          </div>
-        </section>
-        
-
         <!-- Friends Blog -->
-        
+
+<!-- <h5>FRIENDS</h5> -->
+<h5><a href="/">FRIENDS</a></h5>
+<ul class="list-inline">
+  
+  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
+  
+  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
+  
+</ul>
+
+
         <hr>
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-
-          
-          <li>
-            <a href="http://beantech.org" target="_blank">Bean Tech</a>
-          </li>
-          
-          <li>
-            <a href="https://hexo.io/" target="_blank">Hexo</a>
-          </li>
-          
-        </ul>
+    
         
-      </div>
+    <!-- <h5>ARCHIVES</h5> -->
+    <h5><a href="/archives/">ARCHIVES</a></h5>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/11/">November 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
     </div>
+
+
+        <hr>
+    
+        <!-- Categories -->
+
+<!-- <h5>categories</h5> -->
+<h5><a href="/categories/">CATEGORIES</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="/categories/#From-Previous-Blog-General">
+      <li>From-Previous-Blog-General</li>
+    </a>
+    
+    <a href="/categories/#DevOps">
+      <li>DevOps</li>
+    </a>
+    
+    <a href="/categories/#Hexo-Theme-LiveMyLife">
+      <li>Hexo-Theme-LiveMyLife</li>
+    </a>
+    
+  </ul>
+</div>
+
+
+        <hr>
+    
+</div>
+
+    
   </div>
-</article>
-
-
-
-<!-- anchorjs start -->
-<!-- async load function -->
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script type="text/javascript">
-  // async load function
-  function async (u, c) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) {
-      o.addEventListener('load', function(e) {
-        c(null, e);
-      }, false);
-    }
-    s.parentNode.insertBefore(o, s);
-  };
-</script>
-<script type="text/javascript">
-  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
-  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
-    anchors.options = {
-      visible: 'hover',
-      placement: 'left',
-      // icon: 'ℬ'
-      icon: '❡'
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-  });
-</script>
-<style>
-  /* place left on bigger screen */
-  @media all and (min-width: 800px) {
-    .anchorjs-link {
-      position: absolute;
-      left: -0.75em;
-      font-size: 1.1em;
-      margin-top: -0.1em;
-    }
-  }
-</style>
-
-<!-- anchorjs end -->
-
+</div>
 
 
 	<!-- Footer (contains ThemeColor、viewer) -->

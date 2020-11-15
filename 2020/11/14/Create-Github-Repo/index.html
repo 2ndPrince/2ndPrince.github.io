@@ -138,10 +138,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://2ndPrince.github.io/2020/11/14/Link-Cloud-Database-With-PCF/">
+  <link rel="canonical" href="http://2ndPrince.github.io/2020/11/14/Create-Github-Repo/">
   <title>
     
-    Link-Cloud-Database-With-PCF - 2ndPrince Blog
+    Create-Github-Repo - 2ndPrince Blog
     
   </title>
 <meta name="generator" content="Hexo 4.2.1"></head>
@@ -315,10 +315,10 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#PCF" title="PCF">PCF</a>
+              <a class="tag" href="/tags/#Github" title="Github">Github</a>
               
             </div>
-            <h1>Link-Cloud-Database-With-PCF</h1>
+            <h1>Create-Github-Repo</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by 2ndPrince on
@@ -330,11 +330,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">1</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">441</span> In Total
+              Words <span class="post-count">314</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -394,60 +394,31 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="Link-Cloud-Database-with-PCF-applications"><a href="#Link-Cloud-Database-with-PCF-applications" class="headerlink" title="Link Cloud Database with PCF applications"></a>Link Cloud Database with PCF applications</h1><h2 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h2><p>Every application needs database. With our PCF cloud applications, we would need cloud database as well.<br>In this post, we are going to use <code>ClearDB MySQL database</code>, conveniently configured by PCF, link it with our application and finally test in order to confirm working.</p>
+        <h1 id="Create-Github-Repository"><a href="#Create-Github-Repository" class="headerlink" title="Create Github Repository"></a>Create Github Repository</h1><h2 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h2><p>Before VCS(Version Control Software), people named files like filename_v1 and filename_v2. With VCS, you could track all history and easily work<br>with other people. In this post, we are going to create a private Github repository.</p>
 <hr>
-<h2 id="2-Create-a-database-in-PCF"><a href="#2-Create-a-database-in-PCF" class="headerlink" title="2. Create a database in PCF"></a>2. Create a database in PCF</h2><p>Among the list of services in PCF dashboard, choose this service.</p>
-<p><img src="db-instance.png" alt="DB Service"></p>
-<h2 id="3-Member-credentials"><a href="#3-Member-credentials" class="headerlink" title="3. Member credentials"></a>3. Member credentials</h2><p>Look into the database service created. Find the three information ready.</p>
-<p>Hostname, Username and Password</p>
-<h2 id="4-Create-database-schema"><a href="#4-Create-database-schema" class="headerlink" title="4. Create database schema"></a>4. Create database schema</h2><p>With the help of UI from <code>DataGrip</code>, you can easily write SQL script(DDL) to create and modify table structure.</p>
-<p>Create Table<br><img src="new-table-datagrip.png" alt="DB Table Creation"></p>
-<p>View Table with data<br><img src="db-table-with-data.png" alt="DB Table Creation"></p>
-<p>View SQL Queries<br><img src="db-queries-generated.png" alt="DB Query"></p>
-<h2 id="5-Get-a-database-value-through-demo-application"><a href="#5-Get-a-database-value-through-demo-application" class="headerlink" title="5. Get a database value through demo application"></a>5. Get a database value through demo application</h2><p>Let’s think about how to do it before jumping into the implementation.</p>
-<ul>
-<li>First, the application should know database connection info.</li>
-<li>Second, the application should know the table and column names.</li>
-<li>Third, the application should have a model class to contain the database read values.</li>
-<li>Fourth, the application should have an endpoint to make a call to the database and return the result to us.</li>
-</ul>
-<p>Let’s create the model class called <code>Employee</code> that contains id and name.<br><img src="employee-pojo.png" alt="Employee model class"></p>
-<p>Let’s create a repository that makes call from application to database. </p>
-<p>Use spring data jpa and it will work with other database types(Oracle, MySql… etc).</p>
-<p><img src="employee-repo.png" alt="Employee Repository"></p>
-<p>Let’s create a rest controller endpoint for us to test the connection.<br><img src="employee-endpoint.png" alt="Employee Controller"></p>
-<h2 id="6-Test-the-connection-from-local-machine"><a href="#6-Test-the-connection-from-local-machine" class="headerlink" title="6. Test the connection from local machine"></a>6. Test the connection from local machine</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url&#x3D;jdbc:mysql:&#x2F;&#x2F;us-cdbr-east-02.cleardb.com:3306&#x2F;ad_c91762cf7ca78d6</span><br><span class="line">spring.datasource.username&#x3D;</span><br><span class="line">spring.datasource.password&#x3D;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Create-a-private-Repository"><a href="#2-Create-a-private-Repository" class="headerlink" title="2. Create a private Repository"></a>2. Create a private Repository</h2><p>There are two types of repositories in github; public and private.<br>If you choose private and would like to invite other people, you might end up creating a github team account or enterprise that are not free.<br>We are working alone for this tutorial, and private is okay for us.</p>
+<p><img src="1-private.png" alt="Github-Private-Repo"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git config --global user.email &quot;git이메일주소&quot;</span><br><span class="line">git config --global user.name &quot;git이름(별명)&quot;</span><br><span class="line">git remote add origin &quot;깃주소&quot;</span><br><span class="line">(git remote set-url origin new_url) to edit</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;Initial commmit&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
-<p>Test form Postman<br><img src="test-postman.png" alt="Postman Test"></p>
-<h2 id="7-Test-the-connection-from-PCF"><a href="#7-Test-the-connection-from-PCF" class="headerlink" title="7. Test the connection from PCF"></a>7. Test the connection from PCF</h2><p>Since we’ve just created the <code>getAllEmployees</code> endpoint, we need to push our application to the PCF in order to reflect the change.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cf login -a api.run.pivotal.io</span><br><span class="line">cf push -f pathToManifest&#x2F;manifest.yml</span><br></pre></td></tr></table></figure>
+<p><img src="2-push-origin-master.png" alt="Need-To-Create-SSH"></p>
+<p>Looking at the message, I was not permitted. Need to verify my credentials through password or SSH key.</p>
+<h2 id="3-Setup-SSH-Key"><a href="#3-Setup-SSH-Key" class="headerlink" title="3. Setup SSH Key"></a>3. Setup SSH Key</h2><p>You could verify yourself with password, but you don’t want to repeat yourself every time for a push.<br>You can save your password somewhere, but it can be exposed to others.<br>A better verification method is using SSH key.<br>This key is generated in your local machine and link it to your github account.<br>You don’t save your password anywhere but this key only in your machine.<br>For different devices, you might end up creating new SSH keys, but not a big deal.</p>
+<p>Follow up with the guides on setting up SSH Key. <a href="developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys">Link</a></p>
+<h2 id="4-Push-your-code"><a href="#4-Push-your-code" class="headerlink" title="4. Push your code"></a>4. Push your code</h2><p>Try the push command once again.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 
-<p>Test from PCF<br><img src="cloud-test.png" alt="PCF Test"></p>
+<p><img src="3-push-available.png" alt="Pushed"></p>
 <hr>
-<h2 id="8-Troubleshoot"><a href="#8-Troubleshoot" class="headerlink" title="8. Troubleshoot"></a>8. Troubleshoot</h2><ol>
-<li><p>DDL should be carefully designed beforehand, or you will end up changing multiple times</p>
-</li>
-<li><p>I’ve bound the database service to the application in PCF. However, I still provide the database connection info. There must be a room to improve</p>
-</li>
-<li><p>Curious to know generated queries? Set <code>logging.level.root=debug</code> in application.properties. Call the endpoint and find the queries in Intellij console. You will see <code>hql, hibernate, jpatransactionmanager</code> and <code>JpaTransactionManager, EntityManagerFactory, PoolBase</code>. Database connection details are taken care by <code>com.mysql.cj.jdbc.ConnectionImpl</code>.</p>
-</li>
-<li><p>The max user is four in our database. If the following error occurs, connect to the cleardb and clear existing connections.</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.sql.SQLSyntaxErrorException: User &#39;XXXXX has exceeded the &#39;max_user_connections&#39; resource (current value: 4)</span><br></pre></td></tr></table></figure>
-
+<h2 id="5-Troubleshoot"><a href="#5-Troubleshoot" class="headerlink" title="5. Troubleshoot"></a>5. Troubleshoot</h2><p>When trying to push, if you get rejected for having the current branch’s version lower than the previous one,<br>and if you are sure that your branch is the latest one, you have an option to rebase.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master</span><br></pre></td></tr></table></figure>
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/2020/11/14/Create-Github-Repo/" data-toggle="tooltip" data-placement="top" title="Create-Github-Repo">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/2020/11/13/Launch-Application-On-PCF/" data-toggle="tooltip" data-placement="top" title="Launch-Application-On-PCF">Next Post &rarr;</a>
+            <a href="/2020/11/14/Link-Cloud-Database-With-PCF/" data-toggle="tooltip" data-placement="top" title="Link-Cloud-Database-With-PCF">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -490,7 +461,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Link-Cloud-Database-With-PCF&body=Hi,I found this website and thought you might like it http://2ndPrince.github.io/2020/11/14/Link-Cloud-Database-With-PCF/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Create-Github-Repo&body=Hi,I found this website and thought you might like it http://2ndPrince.github.io/2020/11/14/Create-Github-Repo/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -523,7 +494,7 @@
     repo: '',
     owner: '',
     admin: '',
-    id: 'Sat Nov 14 2020 13:47:57 GMT-0500', // Ensure uniqueness and length less than 50
+    id: 'Sat Nov 14 2020 21:10:48 GMT-0500', // Ensure uniqueness and length less than 50
     distractionFreeMode: false, // Facebook-like distraction free mode
     perPage: 10 ,
     pagerDirection: 'last',
@@ -577,7 +548,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Link-Cloud-Database-with-PCF-applications"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Link Cloud Database with PCF applications</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-Overview"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. Overview</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-Create-a-database-in-PCF"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. Create a database in PCF</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-Member-credentials"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. Member credentials</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-Create-database-schema"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. Create database schema</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-Get-a-database-value-through-demo-application"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. Get a database value through demo application</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-Test-the-connection-from-local-machine"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">6. Test the connection from local machine</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#7-Test-the-connection-from-PCF"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">7. Test the connection from PCF</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#8-Troubleshoot"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">8. Troubleshoot</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Create-Github-Repository"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Create Github Repository</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-Overview"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. Overview</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-Create-a-private-Repository"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. Create a private Repository</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-Setup-SSH-Key"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. Setup SSH Key</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-Push-your-code"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. Push your code</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-Troubleshoot"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. Troubleshoot</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -599,7 +570,7 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#PCF" title="PCF">PCF</a>
+            <a class="tag" href="/tags/#Github" title="Github">Github</a>
             
           </div>
         </section>
