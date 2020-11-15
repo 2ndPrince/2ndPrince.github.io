@@ -341,11 +341,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">3</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">471</span> In Total
+              Words <span class="post-count">485</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- 不蒜子统计 start -->
@@ -405,7 +405,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="Link-Jenkins-with-Github"><a href="#Link-Jenkins-with-Github" class="headerlink" title="Link Jenkins with Github"></a>Link Jenkins with Github</h1><h2 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h2><p>What does it mean to link Jenkis with Github?<br>Without this, you would have your source code, build, test, deploy the jar to others.<br>Using cloud, you would want to do differently.</p>
+        <h1 id="Link-Jenkins-with-Github"><a href="#Link-Jenkins-with-Github" class="headerlink" title="Link Jenkins with Github"></a>Link Jenkins with Github</h1><h2 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h2><p>What does it mean to link Jenkins with Github?<br>Without this, you would have your source code, build, test, deploy the jar to others.<br>Using cloud, you would want to do differently.</p>
 <p>When a PR has been merged, it triggers Jenkins build to build, test and deploy to a cloud platform such as PCF. In this post, we are going to have a Jenkins auto-triggered by a Github merge.</p>
 <hr>
 <h2 id="2-Create-a-Jenkins-job"><a href="#2-Create-a-Jenkins-job" class="headerlink" title="2. Create a Jenkins job"></a>2. Create a Jenkins job</h2><p>Choose <code>Freestyle-project</code></p>
@@ -435,7 +435,14 @@
 <p><img src="6-Merge-PR.png" alt="Merge PR"></p>
 <p><img src="7-AutoTriggered.png" alt="Auto trigerred"></p>
 <p>From the image, you can confirm that the build has been <code>Started by Github push by 2ndPrince</code></p>
-<p>For now, it only executes clean and build, but you might want to add deploy option in the future.</p>
+<p>For now, it only executes the shell command <code>clean and build</code> at one step.<br>In the future, you might want to create <code>Jenkins pipelines</code> that includes</p>
+<ul>
+<li>clean and build</li>
+<li>test</li>
+<li>sonarqube</li>
+<li>deploy</li>
+<li>etc…</li>
+</ul>
 <hr>
 <h2 id="7-Troubleshoot"><a href="#7-Troubleshoot" class="headerlink" title="7. Troubleshoot"></a>7. Troubleshoot</h2><ul>
 <li>Make sure your Ngrok port is same as your localhost jenkins <code>8080</code>. If you follow tutorial, you may have it running at <code>80</code></li>
